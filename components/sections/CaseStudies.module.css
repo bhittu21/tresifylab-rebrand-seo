@@ -1,0 +1,234 @@
+.section {
+  position: relative;
+  padding: 6em 0;
+  background-color: #f8fafc; /* Very light slate background */
+  overflow: hidden;
+}
+
+.sectionBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 10% 10%, #f0fdf4 0%, transparent 40%),
+              radial-gradient(circle at 90% 10%, #eff6ff 0%, transparent 40%);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.header {
+  margin-bottom: 4em;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInUp 0.8s ease backwards;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  background-color: var(--color-white);
+  border: 1px solid #e2e8f0;
+  color: var(--color-primary);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  margin-bottom: 1.5em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.badgeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badgeIcon svg {
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.subtext {
+  font-size: 1.1rem;
+  color: var(--color-body);
+  text-align: center;
+  max-width: 800px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  background-color: var(--color-white); /* Pure white cards */
+  border: 1px solid #e2e8f0; /* Thin light slate border */
+  border-radius: 12px;
+  padding: 2.5em;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  animation: fadeInUp 0.8s ease backwards;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+  border-color: #cbd5e1;
+}
+
+.cardHeader {
+  margin-bottom: 2em;
+}
+
+.metric {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.1;
+  margin-bottom: 0.25em;
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+}
+
+.arrow {
+  font-weight: 400;
+}
+
+.metricSub {
+  font-size: 0.85rem;
+  color: var(--color-body);
+  font-weight: 500;
+}
+
+.cardBody {
+  flex-grow: 1;
+  margin-bottom: 2em;
+}
+
+.clientName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 0.2em;
+}
+
+.clientDetails {
+  font-size: 0.9rem;
+  color: var(--color-body);
+  margin-bottom: 1.5em;
+}
+
+.resultText {
+  font-size: 1rem;
+  color: var(--color-body);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.resultText strong {
+  color: var(--color-heading);
+  font-weight: 700;
+}
+
+.cardFooter {
+  margin-top: auto;
+}
+
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--color-heading);
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid #cbd5e1;
+  transition: all 0.2s;
+}
+
+.btnOutline:hover {
+  background-color: var(--color-white);
+  color: var(--color-heading); /* Prevent global a:hover override */
+  border-color: var(--color-heading);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Bottom CTA */
+.bottomCtaWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 4em;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease backwards;
+  animation-delay: 0.4s;
+}
+
+.bottomCta {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  color: var(--color-heading);
+  padding: 14px 32px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 1px solid #cbd5e1;
+  transition: all 0.2s;
+}
+
+.bottomCta:hover {
+  background-color: var(--color-white);
+  color: var(--color-heading); /* Prevent global a:hover override */
+  border-color: var(--color-heading);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 991px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .heading {
+    font-size: 2rem;
+  }
+  
+  .card {
+    padding: 2em;
+  }
+}

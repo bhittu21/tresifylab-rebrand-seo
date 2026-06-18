@@ -1,0 +1,246 @@
+.hero {
+  position: relative;
+  padding: 8em 0 6em;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(22, 163, 74, 0.12), transparent 26%),
+    radial-gradient(circle at 85% 18%, rgba(37, 99, 235, 0.10), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f7faf8 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0.75), rgba(255,255,255,0));
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4em;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Left Column: Copy ─── */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  animation: fadeInUp 0.8s ease backwards;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  background-color: rgba(22, 163, 74, 0.1);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  margin-bottom: 1.5em;
+}
+
+.badgeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badgeIcon svg {
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.heading {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5em;
+}
+
+.desc {
+  font-size: 1.125rem;
+  color: var(--color-body);
+  line-height: 1.6;
+  margin-bottom: 2em;
+  max-width: 90%;
+}
+
+.actions {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 2em;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  border-radius: 9999px;
+  padding: 14px 28px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.ctaSecondary {
+  border-radius: 9999px;
+  padding: 14px 28px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-heading);
+  border-color: var(--color-border);
+}
+
+.ctaSecondary:hover {
+  background-color: var(--color-bg-light);
+  color: var(--color-heading);
+  border-color: var(--color-border);
+}
+
+.subtext {
+  font-size: 0.875rem;
+  color: var(--color-body);
+  opacity: 0.8;
+  max-width: 90%;
+}
+
+/* ─── Right Column: Form Card ─── */
+.formCardWrapper {
+  animation: fadeInUp 0.8s ease backwards;
+  animation-delay: 0.2s;
+}
+
+.formCard {
+  background-color: #09090b;
+  border-radius: 12px;
+  padding: 2.5em;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+.formHeading {
+  color: var(--color-white);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.formSub {
+  color: #a1a1aa;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 2em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.fieldGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input, .select {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid #27272a;
+  background-color: var(--color-white);
+  color: var(--color-heading);
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus, .select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+.select {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.fieldIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.submitBtn {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 14px;
+  border-radius: 8px; /* Not fully pill shaped like the navbar/hero btns */
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5em;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.submitBtn:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 991px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 3em;
+  }
+  
+  .heading {
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .heading {
+    font-size: 2.25rem;
+  }
+  
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .ctaPrimary, .ctaSecondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .formCard {
+    padding: 1.5em;
+  }
+}

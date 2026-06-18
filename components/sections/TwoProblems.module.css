@@ -1,0 +1,231 @@
+.section {
+  position: relative;
+  padding: 6em 0;
+  background-color: #f8fafc;
+  overflow: hidden;
+}
+
+.sectionBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 10% 20%, #ecfdf5 0%, transparent 40%),
+              radial-gradient(circle at 90% 20%, #eff6ff 0%, transparent 40%);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.header {
+  margin-bottom: 3.5em;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  background-color: var(--color-white);
+  border: 1px solid #e2e8f0;
+  color: var(--color-primary);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  margin-bottom: 1.5em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.badgeIcon svg {
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+.subtext {
+  font-size: 1.1rem;
+  color: var(--color-body);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5em;
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 2.5em;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease backwards;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.08);
+}
+
+/* Colored top borders */
+.cardGreen::before,
+.cardBlue::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+}
+
+.cardGreen::before {
+  background-color: var(--color-primary);
+}
+
+.cardBlue::before {
+  background-color: #3b82f6; /* Blue matching the screenshot */
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 0.75em;
+  margin-top: 0.5em;
+}
+
+.cardDesc {
+  font-size: 1rem;
+  color: var(--color-body);
+  margin-bottom: 1.5em;
+  line-height: 1.6;
+}
+
+.checkList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5em 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  flex-grow: 1;
+}
+
+.checkList li {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  font-size: 0.95rem;
+  color: var(--color-body);
+}
+
+.checkIcon {
+  width: 1em;
+  height: 1em;
+  color: var(--color-heading); /* Black checkmark in screenshot */
+  flex-shrink: 0;
+}
+
+.btnGreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 14px 24px;
+  border-radius: 12px; /* Slightly rounded, not fully pill in this exact UI, wait, screenshot shows pill or highly rounded */
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+.btnGreen:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white); /* Fix invisible text on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.25);
+}
+
+.btnIcon {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+/* Bottom CTA */
+.bottomCtaWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5em;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease backwards;
+  animation-delay: 0.2s;
+}
+
+.bottomCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background-color: #2563eb; /* Blue button */
+  color: var(--color-white);
+  padding: 14px 28px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.bottomCta:hover {
+  background-color: #1d4ed8;
+  color: var(--color-white); /* Fix invisible text on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.bottomCtaIcon {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+@media (max-width: 991px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .heading {
+    font-size: 2rem;
+  }
+  
+  .card {
+    padding: 1.5em;
+  }
+  
+  .bottomCta {
+    text-align: center;
+  }
+}

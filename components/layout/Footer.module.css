@@ -1,0 +1,318 @@
+.footer {
+  background-color: #09090b; /* Very dark background */
+  color: var(--color-white);
+  padding: 6em 0 2em;
+}
+
+/* ─── Top Pre-Footer / CTA ─── */
+.ctaSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4em;
+  align-items: center;
+  margin-bottom: 5em;
+}
+
+.ctaContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background-color: transparent;
+  border: 1px solid #3f3f46;
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  margin-bottom: 2em;
+}
+
+.badgeDot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+}
+
+.ctaHeading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 0.5em;
+  line-height: 1.1;
+}
+
+.ctaSub {
+  font-size: 1.1rem;
+  color: #a1a1aa;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+.ctaFormCard {
+  background-color: #09090b;
+  border: 1px solid #27272a; /* Thin outline */
+  border-radius: 12px;
+  padding: 2.5em;
+}
+
+.formHeading {
+  color: var(--color-white);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.formSub {
+  color: #a1a1aa;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 2em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.fieldGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input, .select {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 4px;
+  border: 1px solid #27272a;
+  background-color: var(--color-white);
+  color: var(--color-heading); /* Text inside is black */
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.input:focus, .select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+.select {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.fieldIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.submitBtn {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5em;
+  transition: background-color 0.2s;
+}
+
+.submitBtn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* ─── Dividers ─── */
+.divider {
+  height: 1px;
+  background-color: #27272a; /* Dark gray line */
+  width: 100%;
+  margin: 0;
+}
+
+/* ─── Links Section ─── */
+.linksSection {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 2em;
+  padding: 5em 0;
+}
+
+.brandCol {
+  padding-right: 2em;
+}
+
+.brandName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 1em;
+}
+
+.brandDesc {
+  color: #a1a1aa;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+}
+
+.brandLink {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.brandLink:hover {
+  text-decoration: underline;
+}
+
+.colHeader {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 1.5em;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.linkList a {
+  color: #a1a1aa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.linkList a:hover {
+  color: var(--color-white);
+}
+
+/* ─── Giant Logo ─── */
+.giantLogo {
+  font-size: clamp(4rem, 15vw, 12rem);
+  font-weight: 800;
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  text-align: center;
+  margin-bottom: 0.2em; /* Padding handled by grid/divider naturally but needs some space below it */
+  padding-bottom: 0.3em;
+}
+
+.giantLogoGreen {
+  color: var(--color-primary);
+}
+
+/* ─── Copyright & Bottom Bar ─── */
+.bottomBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2em;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.copyright, .bottomTagline {
+  color: #a1a1aa;
+  font-size: 0.9rem;
+}
+
+.socials {
+  display: flex;
+  gap: 1em;
+}
+
+.socialLink {
+  color: #a1a1aa;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialLink svg {
+  width: 20px;
+  height: 20px;
+}
+
+.socialLink:hover {
+  color: var(--color-white);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 991px) {
+  .ctaSection {
+    grid-template-columns: 1fr;
+    gap: 3em;
+  }
+  
+  .linksSection {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .brandCol {
+    grid-column: span 3;
+    padding-right: 0;
+    margin-bottom: 2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .linksSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .brandCol {
+    grid-column: span 2;
+  }
+  
+  .bottomBar {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .ctaHeading {
+    font-size: 2.5rem;
+  }
+  
+  .ctaFormCard {
+    padding: 1.5em;
+  }
+  
+  .linksSection {
+    grid-template-columns: 1fr;
+  }
+  
+  .brandCol {
+    grid-column: span 1;
+  }
+}

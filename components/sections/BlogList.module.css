@@ -1,0 +1,200 @@
+.section {
+  padding: 6em 0;
+  background-color: #f8fafc;
+}
+
+/* ─── Header & Filters ─── */
+.header {
+  margin-bottom: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  background-color: var(--color-white);
+  border: 1px solid #d1fae5; /* Light green border */
+  color: var(--color-primary);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  margin-bottom: 1.5em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.badgeIcon svg {
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5em;
+}
+
+.subtext {
+  font-size: 1.05rem;
+  color: var(--color-body);
+  margin-bottom: 2em;
+  max-width: 800px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+}
+
+.filterBtn {
+  background-color: var(--color-white);
+  border: 1px solid #e2e8f0;
+  color: var(--color-heading);
+  padding: 8px 20px;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.filterBtn:hover {
+  background-color: #f1f5f9;
+}
+
+.filterBtn.active {
+  background-color: var(--color-heading);
+  color: var(--color-white);
+  border-color: var(--color-heading);
+}
+
+/* ─── Blog Grid ─── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+}
+
+.card {
+  background-color: var(--color-white);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Image Area */
+.imageArea {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  background-color: #f8fafc;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1.5em;
+}
+
+/* The gradient for the cards that don't have explicit images, to push text down like screenshot */
+.noImage {
+  background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%);
+  height: 140px; /* Shorter top area if no image, to make title higher up */
+}
+
+.coverImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.cardCategory {
+  position: relative;
+  z-index: 2;
+  background-color: #dcfce7;
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 9999px;
+}
+
+/* Card Text */
+.cardContent {
+  padding: 0 2em;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Adjust title padding based on if it had an image to match screenshot visual height */
+.cardTitle {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  line-height: 1.3;
+  margin: 0 0 1.5em 0;
+  letter-spacing: -0.01em;
+}
+
+/* Card Footer */
+.cardFooter {
+  border-top: 1px solid #e2e8f0;
+  padding: 1.25em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.authorBadge {
+  background-color: #ecfdf5;
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 9999px;
+}
+
+.date {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .heading {
+    font-size: 2rem;
+  }
+}

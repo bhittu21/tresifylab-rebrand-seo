@@ -1,0 +1,311 @@
+.hero {
+  position: relative;
+  padding: 10em 0 6em;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(22, 163, 74, 0.12), transparent 26%),
+    radial-gradient(circle at 85% 18%, rgba(37, 99, 235, 0.10), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f7faf8 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0.75), rgba(255,255,255,0));
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4em;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Left Column: Copy ─── */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  animation: fadeInUp 0.8s ease backwards;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  background-color: var(--color-white);
+  border: 1px solid #e2e8f0;
+  color: var(--color-primary);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  margin-bottom: 1.5em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.badgeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badgeIcon svg {
+  width: 1em;
+  height: 1em;
+}
+
+.heading {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5em;
+}
+
+.desc {
+  font-size: 1.125rem;
+  color: var(--color-body);
+  line-height: 1.6;
+  margin-bottom: 2em;
+  max-width: 95%;
+}
+
+.actions {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 3em; /* Space between buttons and tags */
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  border-radius: 9999px;
+  padding: 14px 28px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.ctaSecondary {
+  border-radius: 9999px;
+  padding: 14px 28px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-heading);
+  border-color: var(--color-border);
+  background-color: var(--color-white);
+}
+
+.ctaSecondary:hover {
+  background-color: #f1f5f9;
+  color: var(--color-heading); /* Fix hover text color override */
+}
+
+/* Topic Tags Grid */
+.tagsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  width: 100%;
+}
+
+.tagBox {
+  background-color: #f4fbf7; /* Very subtle green tint */
+  border-radius: 12px;
+  padding: 1.25em;
+}
+
+.tagTitle {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.25em;
+}
+
+.tagDesc {
+  color: var(--color-body);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+
+/* ─── Right Column: Graphic Card ─── */
+.graphicWrapper {
+  animation: fadeInUp 0.8s ease backwards;
+  animation-delay: 0.2s;
+  /* Slight padding to allow drop shadow to show fully without clipping */
+  padding: 1em 1em 1em 0; 
+}
+
+.graphicCard {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-heading); /* Black border */
+  border-radius: 12px;
+  padding: 2.5em;
+  box-shadow: 8px 8px 0px 0px var(--color-heading); /* Solid black drop shadow */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.graphicHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.graphicTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin: 0;
+}
+
+.graphicBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  background-color: #ecfdf5;
+  border: 1px solid #d1fae5;
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.greenDot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+}
+
+.focusBoxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.focusBox {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1em;
+}
+
+.focusLabel {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 0.2em;
+}
+
+.focusValue {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.chartArea {
+  position: relative;
+  height: 160px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+
+/* Background grid pattern */
+.chartGrid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, #f1f5f9 1px, transparent 1px),
+    linear-gradient(to bottom, #f1f5f9 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.chartLines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Let the SVG scale to fit the box but preserve aspect slightly */
+}
+
+.flowchart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flowStep {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  background-color: var(--color-white);
+}
+
+.flowArrow {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 991px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 4em;
+  }
+  
+  .heading {
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .heading {
+    font-size: 2.25rem;
+  }
+  
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .ctaPrimary, .ctaSecondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .tagsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .graphicCard {
+    padding: 1.5em;
+  }
+  
+  .flowchart {
+    flex-wrap: wrap;
+    gap: 0.5em;
+    justify-content: flex-start;
+  }
+}
